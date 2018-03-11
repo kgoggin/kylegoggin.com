@@ -1,0 +1,51 @@
+{
+  "name": "kylegoggin.com",
+  "description": "kylegoggin.com site",
+  "version": "1.0.0",
+  "author": "Kyle Goggin",
+  "dependencies": {
+    "gatsby": "^1.8.12",
+    "gatsby-link": "^1.6.8",
+    "gatsby-plugin-glamor": "^1.6.13",
+    "gatsby-plugin-google-analytics": "^1.0.4",
+    "gatsby-plugin-manifest": "^1.0.4",
+    "gatsby-plugin-offline": "^1.0.4",
+    "gatsby-plugin-preact": "^1.0.3",
+    "gatsby-plugin-react-helmet": "^1.0.3",
+    "gatsby-plugin-sharp": "^1.6.2",
+    "gatsby-plugin-typography": "^1.7.18",
+    "gatsby-remark-copy-linked-files": "^1.5.2",
+    "gatsby-remark-images": "^1.5.4",
+    "gatsby-remark-prismjs": "^1.2.1",
+    "gatsby-remark-responsive-iframe": "^1.4.3",
+    "gatsby-remark-smartypants": "^1.4.3",
+    "gatsby-source-filesystem": "^1.4.3",
+    "gatsby-transformer-remark": "^1.7.1",
+    "gatsby-transformer-sharp": "^1.6.1",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.12.0",
+    "lodash": "^4.15.0",
+    "typography-theme-ocean-beach": "^0.15.11"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "gh-pages": "^0.12.0",
+    "prettier": "^1.6.1"
+  },
+  "keywords": ["gatsby"],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "dev": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier 'src/**/*.js'",
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  }
+}
