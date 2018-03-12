@@ -50,5 +50,11 @@ module.exports = {
       },
     },
     "gatsby-plugin-glamor",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-115452330-1",
+      },
+    },
   ],
 };
