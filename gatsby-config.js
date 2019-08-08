@@ -1,54 +1,24 @@
 module.exports = {
-  siteMetadata: {
-    title: "kylegoggin.com",
-    author: "Kyle Goggin",
-  },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: "pages",
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: "gatsby-remark-responsive-iframe",
-            options: {
-              wrapperStyle: "margin-bottom: 1.0725rem",
-            },
-          },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
-        ],
-      },
-    },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-typography",
-      options: {
-        pathToConfigModule: "src/utils/typography.js",
-      },
-    },
-    "gatsby-plugin-glamor",
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-115452330-1",
-      },
-    },
+      resolve: `gatsby-theme-blog`,
+      options: {}
+    }
   ],
+  // Customize your site metadata:
+  siteMetadata: {
+    title: `Kyle Goggin`,
+    author: `Kyle Goggin`,
+    description: ``,
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/kgoggin`
+      },
+      {
+        name: `github`,
+        url: `https://github.com/kgoggin`
+      }
+    ]
+  }
 };
