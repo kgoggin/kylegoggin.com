@@ -3,6 +3,9 @@ title: Sharing Types in a ReasonML/GraphQL App
 date: 2018-04-10
 ---
 
+> Update 10/01/2019:
+> I've refined my approach to defining GraphQL types in Reason! For my most up-to-date thoughts, take a look at [this more recent post](./typing-graphql-operations-in-reason)!
+
 ReasonML and GraphQL sound like a match made in type heaven! But, due to GraphQL’s dynamic data structure on the client, typing your query responses in Reason is actually trickier that it first appears. In this post, I’ll show you how you can create reusable Reason types that correspond to your backend GraphQL schema and use then them in your client-side app to correctly type your query responses.
 
 A quick programming note: this post assumes a basic knowledge of ReasonML types and an understanding of how GraphQL works. If you’re new to either one of these, may I recommend a little pre-reading? [Reason’s documentation](https://reasonml.github.io/docs/en/overview.html) provides a fantastic overview of how to use its many amazing features, and [here’s a great place to dive in with GraphQL](https://graphql.org/learn/).
