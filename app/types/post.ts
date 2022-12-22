@@ -5,6 +5,7 @@ export const postZ = z.object({
   title: z.string(),
   slug: z.string(),
   content: z.string(),
+  date: z.string(),
 });
 
 export type PostDocument = z.infer<typeof postZ>;
