@@ -1,4 +1,4 @@
-app = "temp-97b7"
+app = "huzzapp"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
