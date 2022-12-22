@@ -1,0 +1,9 @@
+#Main {
+  width: 720px;
+}
+
+pre.not-prose code {
+  border-radius: 10px;
+  font-family: "Martian Mono", monospace;
+  font-size: 12px;
+}

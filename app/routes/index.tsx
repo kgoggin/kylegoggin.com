@@ -1,14 +1,10 @@
 import type { LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import groq from "groq";
-import type { PropsWithChildren } from "react";
 import Layout from "~/components/Layout";
+import { getPosts } from "~/models/post.server";
 
-import { getClient } from "~/sanity/client";
-
-import type { PostDocument } from "~/types/post";
-import { postsZ } from "~/types/post";
+import { Post } from "~/components/Post";
 
 export const meta: MetaFunction = (data) => {
   return {
@@ -17,16 +13,7 @@ export const meta: MetaFunction = (data) => {
 };
 
 export const loader = async (props: LoaderArgs) => {
-  const query = groq`*[_type == "post"][0...12]{
-    _id,
-    title,
-    content,
-    "slug": slug.current,
-  }`;
-
-  const posts = await getClient()
-    .fetch(query)
-    .then((res) => (res ? postsZ.parse(res) : null));
+  const posts = await getPosts();
 
   if (!posts) {
     throw new Response("Not found", { status: 404 });
@@ -35,18 +22,8 @@ export const loader = async (props: LoaderArgs) => {
   return json({ posts });
 };
 
-function Post(props: PropsWithChildren<{ post: PostDocument }>) {
-  return (
-    <article>
-      <h2>{props.post.title}</h2>
-      {props.post.content && <div>{props.post.content}</div>}
-    </article>
-  );
-}
-
 export default function Index() {
   const { posts } = useLoaderData<typeof loader>();
-  console.log(posts);
 
   return (
     <Layout>

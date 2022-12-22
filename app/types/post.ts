@@ -2,9 +2,9 @@ import { z } from "zod";
 
 export const postZ = z.object({
   _id: z.string(),
-  title: z.string().nullable(),
-  slug: z.string().nullable(),
-  content: z.string().nullable(),
+  title: z.string(),
+  slug: z.string(),
+  content: z.string(),
 });
 
 export type PostDocument = z.infer<typeof postZ>;
