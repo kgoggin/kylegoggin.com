@@ -19,3 +19,22 @@ export const getPosts = async () => {
     content: markdownToHTML(post.content),
   }));
 };
+
+export const getPost = async (slug: string) => {
+  const query = groq`*[_type == "post"][0...12]{
+    _id,
+    title,
+    content,
+    "slug": slug.current,
+  }`;
+  const uri = makeURI({ query });
+  const res = await fetch(uri);
+  const json: SanityAPIResponse<unknown> = await res.json();
+  return postsZ
+    .parse(json.result)
+    .map((post) => ({
+      ...post,
+      content: markdownToHTML(post.content),
+    }))
+    .find((post) => post.slug === slug);
+};

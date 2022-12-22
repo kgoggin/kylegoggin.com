@@ -7,3 +7,7 @@ pre.not-prose code {
   font-family: "Martian Mono", monospace;
   font-size: 12px;
 }
+
+.prose a.post-title {
+  text-decoration: none;
+}
