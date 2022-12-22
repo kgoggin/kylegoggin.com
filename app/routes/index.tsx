@@ -27,8 +27,13 @@ export default function Index() {
 
   return (
     <Layout>
-      {posts.map((post) => (
-        <Post key={post._id} post={post} />
+      {posts.map((post, idx) => (
+        <div key={post._id}>
+          <Post post={post} />
+          {idx !== posts.length - 1 ? (
+            <div className="my-10 border-b border-slate-300" />
+          ) : null}
+        </div>
       ))}
     </Layout>
   );

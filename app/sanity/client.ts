@@ -23,14 +23,17 @@ export const getClient = () => client;
 
 export const makeURI = ({
   query,
-  useCdn = true,
+  useCdn = false,
+  variables,
 }: {
   query: string;
   useCdn?: boolean;
+  variables?: Record<string, string>;
 }) => {
   const { projectId, dataset, apiVersion } = projectDetails();
   const domain = useCdn ? "apicdn" : "api";
-  return `https://${projectId}.${domain}.sanity.io/v${apiVersion}/data/query/${dataset}/?query=${encodeURI(
+  const vars = variables ? "&" + new URLSearchParams(variables).toString() : "";
+  return `https://${projectId}.${domain}.sanity.io/v${apiVersion}/data/query/${dataset}?query=${encodeURIComponent(
     query
-  )}`;
+  )}${vars}`;
 };
