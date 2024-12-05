@@ -9,10 +9,62 @@ import "../index.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pvi2eso.css" />
+    <title>Kyle Goggin.com</title>
   </head>
-  <body>
-    <Navigation />
-    <h1>My Astro Site</h1>
+  <body class="font-sans text-slate-800 flex flex-col h-screen">
+    <header class="bg-slate-200 border-b border-slate-300">
+      <nav class="px-4 py-3 flex gap-3 max-w-xl m-auto">
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+      </nav>
+    </header>
+    <main class="flex-1">
+      <div class="max-w-xl m-auto px-4 pt-7">
+        <p class="text-2xl"><strong>Hi!</strong> 👋 I'm</p>
+        <h1 class="font-mono text-5xl text-blue-700 my-2">Kyle Goggin</h1>
+        <p class="text-lg">
+          a software engineer 💾 living in Richmond, VA. I've been building cool
+          stuff on the <strong>World Wide Web</strong> 🌐 professionally for over
+          15 years (and just for fun for even longer 🤣). Here are some recent things
+          I've written!
+        </p>
+      </div>
+      <section class="max-w-xl m-auto px-4 pt-7">
+        <h2 class="font-mono text-2xl mb-4">Recent Posts</h2>
+        <ul class="flex flex-col gap-5">
+          <li>
+            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
+            <time class="block text-xs font-mono text-slate-500"
+              >December 03, 2024</time
+            >
+            <p class="mt-2">
+              In which we discuss important matters such as tabs vs. spaces.
+            </p>
+          </li>
+          <li>
+            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
+            <time class="block text-xs font-mono text-slate-500"
+              >December 03, 2024</time
+            >
+            <p class="mt-2">
+              In which we discuss important matters such as tabs vs. spaces.
+            </p>
+          </li>
+          <li>
+            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
+            <time class="block text-xs font-mono text-slate-500"
+              >December 03, 2024</time
+            >
+            <p class="mt-2">
+              In which we discuss important matters such as tabs vs. spaces.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="px-4 py-5 bg-slate-400">
+      <p>© 2024 Kyle Goggin</p>
+    </footer>
   </body>
 </html>
