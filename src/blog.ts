@@ -6,3 +6,5 @@ export const getAllBlogPosts = async ({ limit }: { limit?: number } = {}) => {
   );
   return limit ? posts.slice(0, limit) : posts;
 };
+
+export type Post = Awaited<ReturnType<typeof getAllBlogPosts>>[number];

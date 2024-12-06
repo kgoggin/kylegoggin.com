@@ -1,0 +1,32 @@
+---
+import "../index.css";
+import { getAllBlogPosts, type Post } from "../blog";
+import FormattedDate from "@components/FormattedDate.astro";
+
+type Props = {
+  posts: Post[];
+};
+
+const { posts } = Astro.props;
+---
+
+<ul class="flex flex-col gap-5">
+  {
+    posts.map((post) => (
+      <li>
+        <a
+          href={`/blog/${post.id}`}
+          class="hover:underline hover:text-blue-700 transition-colors duration-100"
+        >
+          <h3 class="font-mono text-xl">{post.data.title}</h3>
+        </a>
+        <FormattedDate
+          dateStyle="long"
+          date={post.data.date}
+          class="block text-xs font-mono text-slate-500"
+        />
+        <p class="mt-2">{post.data.summary}</p>
+      </li>
+    ))
+  }
+</ul>
