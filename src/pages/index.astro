@@ -1,6 +1,9 @@
 ---
-import Navigation from "../components/Navigation.astro";
 import "../index.css";
+import { getAllBlogPosts } from "../blog";
+import FormattedDate from "@components/FormattedDate.astro";
+
+const allPosts = await getAllBlogPosts({ limit: 3 });
 ---
 
 <html lang="en">
@@ -33,33 +36,24 @@ import "../index.css";
       <section class="max-w-xl m-auto px-4 pt-7">
         <h2 class="font-mono text-2xl mb-4">Recent Posts</h2>
         <ul class="flex flex-col gap-5">
-          <li>
-            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
-            <time class="block text-xs font-mono text-slate-500"
-              >December 03, 2024</time
-            >
-            <p class="mt-2">
-              In which we discuss important matters such as tabs vs. spaces.
-            </p>
-          </li>
-          <li>
-            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
-            <time class="block text-xs font-mono text-slate-500"
-              >December 03, 2024</time
-            >
-            <p class="mt-2">
-              In which we discuss important matters such as tabs vs. spaces.
-            </p>
-          </li>
-          <li>
-            <a><h3 class="font-mono text-xl">Blog Post 1</h3></a>
-            <time class="block text-xs font-mono text-slate-500"
-              >December 03, 2024</time
-            >
-            <p class="mt-2">
-              In which we discuss important matters such as tabs vs. spaces.
-            </p>
-          </li>
+          {
+            allPosts.map((post) => (
+              <li>
+                <a
+                  href={`/blog/${post.id}`}
+                  class="hover:underline hover:text-blue-700 transition-colors duration-100"
+                >
+                  <h3 class="font-mono text-xl">{post.data.title}</h3>
+                </a>
+                <FormattedDate
+                  dateStyle="long"
+                  date={post.data.date}
+                  class="block text-xs font-mono text-slate-500"
+                />
+                <p class="mt-2">{post.data.summary}</p>
+              </li>
+            ))
+          }
         </ul>
       </section>
     </main>
