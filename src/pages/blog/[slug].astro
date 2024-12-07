@@ -1,0 +1,40 @@
+---
+import { getAllBlogPosts, getPost } from "../../blog";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Container from "@components/Container.astro";
+import MainHeader from "@components/MainHeader.astro";
+import Footer from "@components/Footer.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getAllBlogPosts();
+  return allPosts.map((p) => ({ params: { slug: p.id } }));
+}
+
+const { slug } = Astro.params;
+const post = await getPost(slug);
+const { Content } = await render(post);
+---
+
+<BaseLayout>
+  <MainHeader />
+  <main class="flex-1">
+    <Container as="article">
+      <div class="mb-5">
+        <h1 class="text-4xl lg:text-5xl text-blue-700 font-mono mb-3">
+          {post.data.title}
+        </h1>
+        <FormattedDate
+          date={post.data.date}
+          dateStyle="long"
+          class="block font-mono text-slate-500 lg:text-lg"
+        />
+      </div>
+      <div class="prose prose-slate prose-a:text-blue-900 lg:prose-xl">
+        <Content />
+      </div>
+    </Container>
+  </main>
+</BaseLayout>
+<Footer />
