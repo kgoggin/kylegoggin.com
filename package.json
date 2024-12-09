@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.0.2",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5"
