@@ -7,9 +7,9 @@ const footerLinks = [
 ];
 ---
 
-<footer class="px-4 py-5 bg-slate-200 text-slate-700/80">
+<footer class="bg-slate-200 text-slate-700/80">
   <Container class="flex flex-col items-center gap-2">
-    <p class="flex-1 font-slab font-bold text-lg">
+    <p class="flex-1 font-slab font-bold text-sm text-center">
       © 2024 Kyle Goggin. All rights reserved.
     </p>
     <div class="flex items-center justify-center lg:-mr-2 text-slate-600/80">
@@ -47,7 +47,7 @@ const footerLinks = [
       </a>
     </div>
     <ul
-      class="flex divide-solid divide-x divide-slate-400/50 font-slab text-lg"
+      class="flex divide-solid divide-x divide-slate-400/50 font-slab text-sm"
     >
       {
         footerLinks.map(({ href, text }) => (
