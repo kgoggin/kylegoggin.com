@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"time"> {
+  date: Date;
+  dateStyle: Intl.DateTimeFormatOptions["dateStyle"];
+}
+
+const { date, dateStyle, ...rest } = Astro.props;
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  dateStyle,
+}).format(date);
+---
+
+<time {...rest} datetime={date.toISOString()}>{formattedDate}</time>

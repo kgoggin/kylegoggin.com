@@ -1,0 +1,25 @@
+---
+import { getAllBlogPosts } from "../../blog";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Container from "@components/Container.astro";
+import MainHeader from "@components/MainHeader.astro";
+import Footer from "@components/Footer.astro";
+import BlogPostSummaryList from "@components/BlogPostSummaryList.astro";
+
+const allPosts = await getAllBlogPosts();
+---
+
+<BaseLayout title="Blog">
+  <MainHeader />
+  <main class="flex-1">
+    <Container as="div">
+      <h1 class="font-slab font-extrabold text-5xl my-2">My Blog</h1>
+      <p class="text-lg mb-5">
+        My thoughts, musings, ideas, and anything else I feel like writing
+        about.
+      </p>
+      <BlogPostSummaryList posts={allPosts} />
+    </Container>
+  </main>
+  <Footer />
+</BaseLayout>
