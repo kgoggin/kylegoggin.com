@@ -4,4 +4,5 @@
 @theme {
   --font-sans: "noto-sans", sans-serif;
   --font-mono: "attribute-mono", monospace;
+  --font-slab: "kranto-normal", sans-serif;
 }
