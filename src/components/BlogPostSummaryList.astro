@@ -17,7 +17,7 @@ const { posts } = Astro.props;
           href={`/blog/${post.id}`}
           class="hover:underline hover:text-blue-700 transition-colors duration-100"
         >
-          <h3 class="font-mono text-xl">{post.data.title}</h3>
+          <h3 class="font-slab font-extrabold text-xl">{post.data.title}</h3>
         </a>
         <FormattedDate
           dateStyle="long"

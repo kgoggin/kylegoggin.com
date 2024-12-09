@@ -10,11 +10,10 @@ const recentPosts = await getAllBlogPosts({ limit: 3 });
 ---
 
 <BaseLayout>
-  <MainHeader />
   <main class="flex-1">
     <Container as="div">
       <p class="text-2xl"><strong>Hi!</strong> 👋 I'm</p>
-      <h1 class="font-mono text-5xl text-blue-700 my-2">Kyle Goggin</h1>
+      <h1 class="font-slab text-5xl font-extrabold mt-2 mb-3">Kyle Goggin</h1>
       <p class="text-lg">
         a software engineer 💾 living in Richmond, VA. I've been building cool
         stuff on the <strong>World Wide Web</strong> 🌐 professionally for over 15
@@ -23,7 +22,7 @@ const recentPosts = await getAllBlogPosts({ limit: 3 });
       </p>
     </Container>
     <Container as="section">
-      <h2 class="font-mono text-2xl mb-4">Recent Posts</h2>
+      <h2 class="font-slab font-extrabold text-3xl mb-4">Recent Posts</h2>
       <BlogPostSummaryList posts={recentPosts} />
     </Container>
   </main>

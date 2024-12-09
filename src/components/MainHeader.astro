@@ -2,9 +2,14 @@
 import Container from "./Container.astro";
 ---
 
-<header class="bg-slate-200 border-b border-slate-300">
-  <Container as="nav" class="py-3 flex gap-3">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
+<header class="bg-slate-100">
+  <Container as="nav" class="py-5">
+    <a class="flex-1 flex flex-col items-center" href="/">
+      <span class="font-slab text-3xl lg:text-4xl font-extrabold"
+        >Kyle Goggin</span
+      >
+      <span class="font-slab text-md lg:text-lg font-normal">Web Developer</span
+      >
+    </a>
   </Container>
 </header>

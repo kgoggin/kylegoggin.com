@@ -22,7 +22,7 @@ const { Content } = await render(post);
   <main class="flex-1">
     <Container as="article">
       <div class="mb-5">
-        <h1 class="text-4xl lg:text-5xl text-blue-700 font-mono mb-3">
+        <h1 class="text-4xl lg:text-5xl font-slab font-extrabold mb-3">
           {post.data.title}
         </h1>
         <FormattedDate
@@ -31,7 +31,9 @@ const { Content } = await render(post);
           class="block font-mono text-slate-500 lg:text-lg"
         />
       </div>
-      <div class="prose prose-slate prose-a:text-blue-900 lg:prose-xl">
+      <div
+        class="prose prose-slate prose-a:text-blue-700 prose-a:no-underline prose-a:hover:underline lg:prose-xl prose-headings:font-slab prose-headings:font-bold"
+      >
         <Content />
       </div>
     </Container>
