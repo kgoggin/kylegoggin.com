@@ -9,7 +9,10 @@ import BlogPostSummaryList from "@components/BlogPostSummaryList.astro";
 const allPosts = await getAllBlogPosts();
 ---
 
-<BaseLayout title="Blog">
+<BaseLayout
+  title="Blog"
+  description="My thoughts, musings, ideas, and anything else I feel like writing about."
+>
   <MainHeader />
   <main class="flex-1">
     <Container as="div">
