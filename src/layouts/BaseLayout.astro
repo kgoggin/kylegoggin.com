@@ -2,28 +2,54 @@
 import "../index.css";
 type Props = {
   title: string;
+  description: string;
 };
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const pageTitle = `${title} | Kyle Goggin`;
 ---
 
 <html lang="en">
   <head>
+    <!-- normal webpage-y stuff -->
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- primary meta tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://use.typekit.net" />
+    <link rel="dns-prefetch" href="https://use.typekit.net" />
+
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- web fonts -->
+    <link rel="preload" as="style" href="https://use.typekit.net/pvi2eso.css" />
     <link rel="stylesheet" href="https://use.typekit.net/pvi2eso.css" />
-    <title>{pageTitle}</title>
-    <!-- Fathom - beautiful, simple website analytics -->
+
+    <!-- RSS Link -->
+    <link
+      rel="alternate"
+      href="/rss.xml"
+      type="application/rss+xml"
+      title="Kyle Goggin"
+    />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Fathom -->
     <script src="https://cdn.usefathom.com/script.js" data-site="XJSEJRAX" defer
     ></script>
-    <!-- / Fathom -->
   </head>
-  <body class="font-sans text-slate-800 flex flex-col h-screen">
+  <body class="font-sans font-light text-slate-800 flex flex-col h-screen">
     <slot />
   </body>
 </html>

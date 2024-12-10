@@ -17,7 +17,7 @@ const post = await getPost(slug);
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={post.data.title}>
+<BaseLayout title={post.data.title} description={post.data.summary}>
   <MainHeader />
   <main class="flex-1">
     <Container as="article">
